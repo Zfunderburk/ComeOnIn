@@ -96,15 +96,64 @@ public class DialogueSystem : MonoBehaviour {
     {
         if (outOfRange == false)
         {
+            int stringLength = stringToDisplay.Length;
+            int currentCharacterIndex = 0;
 
+            dialogueText.text = "";
+
+            while (currentCharacterIndex < stringLength)
+            {
+                dialogueText.text += stringToDisplay[currentCharacterIndex];
+                currentCharacterIndex++;
+
+                if (currentCharacterIndex < stringLength)
+                {
+                    if (Input.GetKey(DialogueInput))
+                    {
+                        yield return new WaitForSeconds(letterDelay * letterMultiplier);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(letterDelay);
+                    }
+                }
+                else
+                {
+                    dialogueEnded = false;
+                    break;
+                }
+            }
+            while (true)
+            {
+                if(Input.GetKeyDown(DialogueInput))
+                {
+                    break;
+                }
+                yield return 0;
+            }
+            dialogueEnded = false;
+            letterIsMultiplied = false;
+            dialogueText.text = "";
         }
 
     }
 
-    public void OutOfRange()
+    public void DropDialogue()
     {
-
+        dialogueGUI.SetActive(false);
+        dialogueBoxGUI.gameObject.SetActive(false);
     }
 
-	
+    public void OutOfRange()
+    {
+        outOfRange = true;
+        if (outOfRange == true)
+        {
+            letterIsMultiplied = false;
+            dialogueActive = false;
+            StopAllCoroutines();
+            dialogueGUI.SetActive(false);
+            dialogueBoxGUI.gameObject.SetActive(false);
+        }
+    }
 }
