@@ -25,7 +25,7 @@ public class NPC : MonoBehaviour
     {
         //		TextBG.position = Camera.main.worldToScreenPoint(NonPlayer.position + Vector3.up * 7f)
         Vector3 Pos = Camera.main.WorldToScreenPoint(NonPlayer.position);
-        Pos.y += 175;
+        Pos.y += 10;
         TextBG.position = Pos;
 	}
 

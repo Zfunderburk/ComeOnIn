@@ -5,12 +5,12 @@ using UnityEngine;
 //Script for Player movement
 public class PlayerController : MonoBehaviour 
 {
-	public Transform pivot;
+//	public Transform pivot;
 
 	public float speed;
 	public Vector3 playerMove{set;get;}
 
-	public Transform trans;
+//	public Transform trans;
 //	public Transform camTransform;
 
 	void Update ()

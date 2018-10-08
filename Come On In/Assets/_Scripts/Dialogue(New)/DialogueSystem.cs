@@ -47,6 +47,7 @@ public class DialogueSystem : MonoBehaviour {
         nameText.text = Names;
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space Pressed");
             if(!dialogueActive)
             {
                 dialogueActive = true;
