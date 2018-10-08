@@ -109,14 +109,16 @@ public class DialogueSystem : MonoBehaviour {
 
                 if (currentCharacterIndex < stringLength)
                 {
-                    if (Input.GetKey(DialogueInput))
-                    {
-                        yield return new WaitForSeconds(letterDelay * letterMultiplier);
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(letterDelay);
-                    }
+                    yield return new WaitForSeconds(letterDelay * letterMultiplier);
+
+                    //if (Input.GetKey(DialogueInput))
+                    //{
+                    //    yield return new WaitForSeconds(letterDelay * letterMultiplier);
+                    //}
+                    //else
+                    //{
+                    //    yield return new WaitForSeconds(letterDelay);
+                    //}
                 }
                 else
                 {

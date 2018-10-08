@@ -21,13 +21,13 @@ public class NPC : MonoBehaviour
         dialogueSystem = FindObjectOfType<DialogueSystem>();
 	}
 
-	void Update () 
-    {
-        //		TextBG.position = Camera.main.worldToScreenPoint(NonPlayer.position + Vector3.up * 7f)
-        Vector3 Pos = Camera.main.WorldToScreenPoint(NonPlayer.position);
-        Pos.y += 10;
-        TextBG.position = Pos;
-	}
+	//void Update () 
+ //   {
+ //       //		TextBG.position = Camera.main.worldToScreenPoint(NonPlayer.position + Vector3.up * 7f)
+ //       Vector3 Pos = Camera.main.WorldToScreenPoint(NonPlayer.position);
+ //       Pos.y += 10;
+ //       TextBG.position = Pos;
+	//}
 
     public void OnTriggerStay(Collider other)
     {
